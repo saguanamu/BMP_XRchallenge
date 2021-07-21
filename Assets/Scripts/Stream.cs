@@ -24,27 +24,32 @@ public class Stream : MonoBehaviour
 
     public void Begin()
     {
-        StartCoroutine(UpdateParticle());
+        
+        StartCoroutine(BeginPour());
         pourRoutine = StartCoroutine(BeginPour());
+
     }
 
     private IEnumerator BeginPour()
     {
+        StartCoroutine(UpdateParticle());
+
         while (gameObject.activeSelf)
         {
+            
             targetPosition = FindEndPoint();
             MoveToPosition(0, transform.position);
             AnimateToPosition(1, targetPosition);
-
             yield return null;
+
         }
-        
     }
 
     public void End()
     {
         StopCoroutine(pourRoutine);
         pourRoutine = StartCoroutine(EndPour());
+        
     }
 
     private IEnumerator EndPour()
@@ -54,9 +59,9 @@ public class Stream : MonoBehaviour
             AnimateToPosition(0, targetPosition);
             AnimateToPosition(1, targetPosition);
             yield return null;
+            
         }
         Destroy(gameObject);
-        
     }
 
     private Vector3 FindEndPoint()
@@ -90,7 +95,7 @@ public class Stream : MonoBehaviour
         return currentPosition == targetPosition;
     }
 
-    private IEnumerator UpdateParticle()
+    private IEnumerator UpdateParticle() // particle below
     {
         while (gameObject.activeSelf)
         {
