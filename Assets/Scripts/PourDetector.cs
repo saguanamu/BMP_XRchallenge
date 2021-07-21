@@ -30,7 +30,7 @@ public class PourDetector : MonoBehaviour
 
     private void StartPour()
     {
-        print("Fuck!!! start!!!!!!!!!!!!!!!!!");
+        print("start!!!!!!!!!!!!!!!!!");
         currentStream = CreateStream();
         currentStream.Begin();
     }
@@ -38,11 +38,13 @@ public class PourDetector : MonoBehaviour
     private void EndPour()
     {
         print("END");
+        currentStream.End();
+        currentStream = null;
     }
 
     private float CalculatePourAngle()
     {
-        return transform.forward.y * Mathf.Rad2Deg;
+        return transform.forward.z * Mathf.Rad2Deg;
     }
 
     private Stream CreateStream()
