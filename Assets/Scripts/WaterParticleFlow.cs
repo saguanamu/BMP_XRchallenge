@@ -8,13 +8,13 @@ public class WaterParticleFlow : MonoBehaviour
     public ParticleSystem ps;
     //Rigidbody rg;
 
-    private bool isClick;
+    //private bool isClick;
 
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
         //rg = GetComponent<Rigidbody>();
-        isClick = false;
+        //isClick = false;
     }
 
     // Update is called once per frame
