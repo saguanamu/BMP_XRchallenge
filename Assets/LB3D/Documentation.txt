@@ -1,3 +1,0 @@
-This is a simple model with some animations connected to it. Tutorials here: https://docs.unity3d.com/Manual/Animator.html
-
-Other than that, please do not abuse the chicken. He is very cute. 
