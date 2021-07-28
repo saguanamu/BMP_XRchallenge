@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -455,7 +455,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &322612713
@@ -1172,7 +1171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1268,7 +1266,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &606137942
 Canvas:
   m_ObjectHideFlags: 0
@@ -4247,6 +4244,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8108848432911761541, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108848432911761541, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
       propertyPath: CollisionModule.type
       value: 1
       objectReference: {fileID: 0}
@@ -4281,10 +4282,6 @@ PrefabInstance:
     - target: {fileID: 8108848432911761541, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108848432911761541, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
-      propertyPath: CollisionModule.m_Planes.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8108848432911761541, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
       propertyPath: CollisionModule.m_Planes.Array.data[0]
