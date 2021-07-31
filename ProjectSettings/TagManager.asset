@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Land
   - Water
+  - Bee
   layers:
   - Default
   - TransparentFX
