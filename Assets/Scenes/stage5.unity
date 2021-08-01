@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 213614947}
   - component: {fileID: 213614944}
   m_Layer: 0
-  m_Name: Rbuttonbase3
+  m_Name: RButtonBase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8521,7 +8521,7 @@ GameObject:
   - component: {fileID: 1549526293}
   - component: {fileID: 1549526290}
   m_Layer: 0
-  m_Name: Ybuttonbase3
+  m_Name: YButtonBase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9303,7 +9303,7 @@ GameObject:
   - component: {fileID: 1839826529}
   - component: {fileID: 1839826532}
   m_Layer: 0
-  m_Name: Wbuttonbase3
+  m_Name: WButtonBase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
