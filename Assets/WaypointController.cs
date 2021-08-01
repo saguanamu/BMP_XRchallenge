@@ -26,7 +26,10 @@ public class WaypointController : MonoBehaviour
         Vector3 directionToTarget = targetWaypoint.position - transform.position;
         Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
+        if (directionToTarget != Vector3.zero) //look rotation viewing vector is zero error
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
+        }
 
         float distance = Vector3.Distance(transform.position, targetWaypoint.position);
         CheckDistanceToWaypoint(distance);
