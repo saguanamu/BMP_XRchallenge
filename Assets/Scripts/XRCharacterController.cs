@@ -15,6 +15,7 @@ public class XRCharacterController : MonoBehaviour
     public Transform mesh = null;
     public XRController controller = null;
 
+
     // Componenets
     private Animator animator = null;
     private CharacterController character = null;
@@ -31,10 +32,15 @@ public class XRCharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 position)) // 조이스틱
+        {
+            //CheckForMovement(); 여기서 위치 이동
+        }
+        /*
         if (controller.enableInputActions) { 
             CheckForMovement(controller.inputDevice);
             CheckForWave(controller.inputDevice);
-        }
+        }*/
     }
 
     private void CheckForMovement(InputDevice device) // joystick direction
