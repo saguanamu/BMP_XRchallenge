@@ -95,13 +95,12 @@
       }
     },
     "com.unity.xr.interaction.toolkit": {
-      "version": "0.10.0-preview.7",
+      "version": "0.9.4-preview",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.inputsystem": "1.0.0",
         "com.unity.ugui": "1.0.0",
-        "com.unity.xr.legacyinputhelpers": "2.1.4"
+        "com.unity.xr.legacyinputhelpers": "1.3.11"
       },
       "url": "https://packages.unity.com"
     },
@@ -150,7 +149,7 @@
       "url": "https://packages.unity.com"
     },
     "com.valvesoftware.unity.openvr": {
-      "version": "file:C:/Users/baeyo/bbomulfarm/com.valvesoftware.unity.openvr-1.1.4.tgz",
+      "version": "file:C:/Users/jis60/Downloads/com.valvesoftware.unity.openvr-1.1.4 (1).tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
