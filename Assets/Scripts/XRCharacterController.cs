@@ -7,14 +7,12 @@ using UnityEngine.XR;
 public class XRCharacterController : MonoBehaviour
 {
     // input values
-    public float speed = 5.0f;
-    public float deadzone = 0.1f;
+    public float speed = 1.0f;
 
     // reference
     public Transform head = null;
     public Transform mesh = null;
     public XRController controller = null;
-
 
     // Componenets
     private Animator animator = null;
@@ -22,7 +20,6 @@ public class XRCharacterController : MonoBehaviour
 
     // Values
     private Vector3 currentDirection = Vector3.zero;
-    private bool isWaving = false;
 
     private void Awake()
     {
@@ -32,15 +29,10 @@ public class XRCharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 position)) // 조이스틱
-        {
-            //CheckForMovement(); 여기서 위치 이동
-        }
-        /*
         if (controller.enableInputActions) { 
             CheckForMovement(controller.inputDevice);
-            CheckForWave(controller.inputDevice);
-        }*/
+            //CheckForWave(controller.inputDevice);
+        }
     }
 
     private void CheckForMovement(InputDevice device) // joystick direction
@@ -49,10 +41,7 @@ public class XRCharacterController : MonoBehaviour
         if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 joystickDirection))
         {
             // Sets character direction, also factoring head
-            Vector3 newDirection = CalculateDirection(joystickDirection);
-
-            // If we haven't broken the deadzone value, make direction zero
-            currentDirection = newDirection.magnitude > deadzone ? newDirection : Vector3.zero;
+            CalculateDirection(joystickDirection);
 
             // Apply character direction, and speed v
             MoveCharacter();
@@ -66,7 +55,7 @@ public class XRCharacterController : MonoBehaviour
     }
 
 
-    private Vector3 CalculateDirection(Vector2 joystickDirection)
+    private void CalculateDirection(Vector2 joystickDirection)
     {
         // Joystick direction
         Vector3 newDirection = new Vector3(joystickDirection.x, 0, joystickDirection.y);
@@ -75,7 +64,7 @@ public class XRCharacterController : MonoBehaviour
         Vector3 headRotation = new Vector3(0, head.transform.eulerAngles.y, 0);
 
         // Rotate our joystick direction using the rotation of the head
-        return Quaternion.Euler(headRotation) * newDirection;
+        currentDirection = Quaternion.Euler(headRotation) * newDirection;
     }
 
     private void MoveCharacter() // head rotation
@@ -97,6 +86,7 @@ public class XRCharacterController : MonoBehaviour
         animator.SetFloat("Move", blend);
     }
 
+    /*
     private void CheckForWave(InputDevice device)
     {
         if(device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed))
@@ -115,5 +105,5 @@ public class XRCharacterController : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }
