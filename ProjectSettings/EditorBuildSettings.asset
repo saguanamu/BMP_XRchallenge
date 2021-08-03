@@ -9,12 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/Samples/Google Cardboard XR Plugin for Unity/1.6.0/Hello
-      Cardboard/Scenes/HelloCardboard.unity
-    guid: 145a2a45d7bc746b19cb68410368bf96
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/stage1.unity
     guid: 885591d1c2e21f145a5220ff9ff08436
+  - enabled: 1
+    path: Assets/Scenes/stage7.unity
+    guid: 5abeb20dc0cb65d4fbcf82a43bb15705
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 386a4313d93686b4285832962cd6f530, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 981396a00c1c85146b1e807230c8ed5d, type: 2}
