@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRCharacterController : MonoBehaviour
 {
@@ -23,6 +21,7 @@ public class XRCharacterController : MonoBehaviour
 
     // 플레이어 주변 인식 가능한 물건
     GameObject nearObject;
+    private bool isPicked = false;
 
     private void Awake()
     {
@@ -32,9 +31,11 @@ public class XRCharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (controller.enableInputActions) { 
+        if (controller.enableInputActions)
+        {
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
+            PickUp(controller.inputDevice);
         }
     }
 
@@ -123,4 +124,25 @@ public class XRCharacterController : MonoBehaviour
         if (other.tag == "Mission")
             nearObject = null;
     }
+
+    private void PickUp(InputDevice device) // A button
+    {
+        if (device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed))
+        {
+            if (isPicked != isPressed)
+            {
+                isPicked = isPressed;
+
+                if (isPicked)
+                {
+                    animator.SetTrigger("Pick");
+                }
+                else
+                {
+                    animator.ResetTrigger("Pick");
+                }
+            }
+        }
+    }
 }
+
