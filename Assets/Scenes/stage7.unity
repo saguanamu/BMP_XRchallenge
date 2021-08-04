@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3654,7 +3654,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: aa30314f5b5fc1e40b00fbd4035ac0fe, type: 2}
     - target: {fileID: 1863652075701507573, guid: a3716edd7cd86b446bda8f9fc36c9f32, type: 3}
       propertyPath: m_Name
-      value: Sample 02
+      value: Jaeduk
       objectReference: {fileID: 0}
     - target: {fileID: 1863652075701537239, guid: a3716edd7cd86b446bda8f9fc36c9f32, type: 3}
       propertyPath: m_RootOrder
@@ -4316,7 +4316,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 110
+  m_RootOrder: 111
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1079642114
 PrefabInstance:
@@ -7954,7 +7954,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 109
+  m_RootOrder: 110
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1836221161
 GameObject:
@@ -8018,7 +8018,7 @@ Transform:
   m_Children:
   - {fileID: 547859858}
   m_Father: {fileID: 0}
-  m_RootOrder: 111
+  m_RootOrder: 112
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1849620016
 PrefabInstance:
