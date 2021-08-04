@@ -21,6 +21,9 @@ public class XRCharacterController : MonoBehaviour
     // Values
     private Vector3 currentDirection = Vector3.zero;
 
+    // 플레이어 주변 인식 가능한 물건
+    GameObject nearObject;
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -106,4 +109,18 @@ public class XRCharacterController : MonoBehaviour
             }
         }
     }*/
+
+    // 미션 물건 인식
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Mission")
+            nearObject = other.gameObject;
+        Debug.Log(nearObject.name);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Mission")
+            nearObject = null;
+    }
 }
