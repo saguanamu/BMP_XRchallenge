@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   head: {fileID: 0}
-  mesh: {fileID: 0}
+  mesh: {fileID: 1863652075701537239}
   controller: {fileID: 0}
 --- !u!65 &3599433640563523881
 BoxCollider:
