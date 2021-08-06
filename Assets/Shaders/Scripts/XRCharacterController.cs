@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XRCharacterController : MonoBehaviour
 {
     // input values
-    public float speed = 1.0f;
+    public float speed = 0.2f;
 
     // reference
     public Transform head = null;
