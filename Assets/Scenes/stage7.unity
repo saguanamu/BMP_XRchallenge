@@ -1875,11 +1875,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b094bec2ce184945bd785b25bfffadf, type: 3}
---- !u!1 &482412241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8590118372667331011, guid: 8b094bec2ce184945bd785b25bfffadf, type: 3}
-  m_PrefabInstance: {fileID: 482412240}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &482412242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8590118372667231715, guid: 8b094bec2ce184945bd785b25bfffadf, type: 3}
@@ -4938,7 +4933,7 @@ PrefabInstance:
     - target: {fileID: 771098836850544412, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: pickys.Array.data[0]
       value: 
-      objectReference: {fileID: 482412241}
+      objectReference: {fileID: 1886888769}
     - target: {fileID: 1696312050589636648, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: m_WarningMessage
       value: "\nBinding warning: Some generic clip(s) animate transforms that are
@@ -5027,7 +5022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8658421219440962353, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.635
+      value: 3.5885
       objectReference: {fileID: 0}
     - target: {fileID: 8658421219440962353, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5035,7 +5030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8658421219440962353, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.966
+      value: 1.918
       objectReference: {fileID: 0}
     - target: {fileID: 8658421219440962353, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10203,6 +10198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0fe8f954046e4b4d845f9f33c99548e, type: 3}
+--- !u!1 &1886888769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8590118372667331011, guid: 8b094bec2ce184945bd785b25bfffadf, type: 3}
+  m_PrefabInstance: {fileID: 2833419609302722118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1931882449
 PrefabInstance:
   m_ObjectHideFlags: 0

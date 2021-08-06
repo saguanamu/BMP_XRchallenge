@@ -25,6 +25,8 @@ public class XRCharacterController : MonoBehaviour
     public GameObject[] pickys; // 주울 수 있는 물건들
     public bool[] hasPickys; // 플레이어가 주운 상태인지
 
+
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -38,7 +40,7 @@ public class XRCharacterController : MonoBehaviour
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
             Push(controller.inputDevice);
-            //Interaction();
+            Interaction();
         }
     }
 
@@ -108,12 +110,9 @@ public class XRCharacterController : MonoBehaviour
             nearObject = null;
     }
     
-    
-    // 미션 물건 줍기 or 들기
-    /*
     void Interaction()
     {
-        if(nearObject.tag == "Tool")
+        if (nearObject.tag == "Tool")
         {
             Item item = nearObject.GetComponent<Item>();
             int toolIndex = item.value;
@@ -121,22 +120,15 @@ public class XRCharacterController : MonoBehaviour
 
             Destroy(nearObject);
         }
-
-    }*/
-
-
+    }
+    
+    // 미션 물건 줍기 or 들기
     private void Push(InputDevice device) // A button
     {
         // A Button
         if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary)) {
-            if (nearObject.tag == "Tool")
-            {
-                Item item = nearObject.GetComponent<Item>();
-                int toolIndex = item.value;
-                hasPickys[toolIndex] = true;
-
-                Destroy(nearObject);
-            }
+            Interaction();
+            
             /*
             if (isPicked != primary)
             {
