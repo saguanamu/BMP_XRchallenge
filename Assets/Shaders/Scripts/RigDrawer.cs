@@ -10,7 +10,7 @@ public class RigDrawer : MonoBehaviour
     {
         if(origin != null){
             Gizmos.color = Color.green;
-            GizmoHelpers.DrawWireCubeOriented(origin.transform.position, origin.transform.rotation, 3.0f * origin.transform.localScale.x);
+            GizmoHelpers.DrawWireCubeOriented(origin.transform.position, origin.transform.rotation, 1.5f * origin.transform.localScale.x);
         }
     }
 }

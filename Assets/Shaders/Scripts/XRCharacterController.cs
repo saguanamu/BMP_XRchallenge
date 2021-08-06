@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -21,10 +20,10 @@ public class XRCharacterController : MonoBehaviour
     private Vector3 currentDirection = Vector3.zero;
 
     // 플레이어 주변 인식 가능한 물건
-    //GameObject nearObject;
-    //private bool isPicked = false;
-    //public GameObject[] pickys; // 주울 수 있는 물건들
-    //public bool[] hasPickys; // 플레이어가 주운 상태인지
+    GameObject nearObject;
+    private bool isPicked = false;
+    public GameObject[] pickys; // 주울 수 있는 물건들
+    public bool[] hasPickys; // 플레이어가 주운 상태인지
 
     private void Awake()
     {
@@ -38,7 +37,7 @@ public class XRCharacterController : MonoBehaviour
         {
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
-            //PickUp(controller.inputDevice);
+            PickUp(controller.inputDevice);
         }
     }
 
@@ -93,8 +92,8 @@ public class XRCharacterController : MonoBehaviour
         animator.SetFloat("Move", blend);
     }
 
+
     // 미션 물건 인식
-    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Mission")
@@ -107,13 +106,12 @@ public class XRCharacterController : MonoBehaviour
         if (other.tag == "Mission")
             nearObject = null;
     }
-
+    
     // 미션 물건 줍기 or 들기
 
     private void PickUp(InputDevice device) // A button
     {
-        if (device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed))
-        {
+        if(device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed)) { 
             if (isPicked != isPressed)
             {
                 isPicked = isPressed;
@@ -126,10 +124,7 @@ public class XRCharacterController : MonoBehaviour
                     animator.ResetTrigger("Push");
                 }
             }
-
-
         }
     }
-    */
 }
 
