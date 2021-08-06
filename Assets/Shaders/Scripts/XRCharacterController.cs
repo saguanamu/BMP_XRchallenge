@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XRCharacterController : MonoBehaviour
 {
     // input values
-    public float speed = 1.0f;
+    public float speed = 0.2f;
 
     // reference
     public Transform head = null;
@@ -37,7 +37,7 @@ public class XRCharacterController : MonoBehaviour
         {
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
-            PickUp(controller.inputDevice);
+            Push(controller.inputDevice);
         }
     }
 
@@ -92,7 +92,7 @@ public class XRCharacterController : MonoBehaviour
         animator.SetFloat("Move", blend);
     }
 
-
+    /*
     // 미션 물건 인식
     private void OnTriggerStay(Collider other)
     {
@@ -103,15 +103,34 @@ public class XRCharacterController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Tool")
-            Item nearObject = null;
+        //if (other.tag == "Tool")
+            //Item nearObject = null;
     }
+    */
     
     // 미션 물건 줍기 or 들기
 
-    private void PickUp(InputDevice device) // A button
+
+
+    private void Push(InputDevice device) // A button
     {
-        if(device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed)) { 
+        // A Button
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary)) {
+            if (isPicked != primary)
+            {
+                isPicked = primary;
+                if (isPicked)
+                {
+                    animator.SetTrigger("Push");
+                }
+                else
+                {
+                    animator.ResetTrigger("Push");
+                }
+            }
+        }
+        /*
+        if (device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed)) { 
             if (isPicked != isPressed)
             {
                 isPicked = isPressed;
@@ -125,6 +144,7 @@ public class XRCharacterController : MonoBehaviour
                 }
             }
         }
+        */
     }
 }
 

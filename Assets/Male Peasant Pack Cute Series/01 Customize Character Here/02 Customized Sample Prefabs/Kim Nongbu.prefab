@@ -570,7 +570,7 @@ Animator:
     'RigLUpperarm'\n\tTransform 'RigRForearm'\n\tTransform 'RigLPalm'\n\tTransform
     'RigRFinger11'\n\tTransform 'RigRCollarbone'\n\tTransform 'RigRUpperarm'\n\tTransform
     'RigLUpperarm'\n\tTransform 'RigRForearm'\n\tand more ...\n\tFrom animation clip
-    'open window'\n\tFrom animation clip 'pour watering can'"
+    'open window'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -603,8 +603,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.95319265}
-  m_Center: {x: 0.000000008487782, y: 0, z: -0.1918382}
+  m_Size: {x: 0.3, y: 1.8749588, z: 0.8638853}
+  m_Center: {x: -6.3661854e-11, y: 0.9374794, z: -0.019811066}
 --- !u!1 &8658421219440998165
 GameObject:
   m_ObjectHideFlags: 0
