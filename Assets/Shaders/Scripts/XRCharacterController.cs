@@ -38,6 +38,7 @@ public class XRCharacterController : MonoBehaviour
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
             Push(controller.inputDevice);
+            //Interaction();
         }
     }
 
@@ -92,7 +93,7 @@ public class XRCharacterController : MonoBehaviour
         animator.SetFloat("Move", blend);
     }
 
-    /*
+    
     // 미션 물건 인식
     private void OnTriggerStay(Collider other)
     {
@@ -103,19 +104,40 @@ public class XRCharacterController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //if (other.tag == "Tool")
-            //Item nearObject = null;
+        if (other.tag == "Tool")
+            nearObject = null;
     }
-    */
+    
     
     // 미션 물건 줍기 or 들기
+    /*
+    void Interaction()
+    {
+        if(nearObject.tag == "Tool")
+        {
+            Item item = nearObject.GetComponent<Item>();
+            int toolIndex = item.value;
+            hasPickys[toolIndex] = true;
 
+            Destroy(nearObject);
+        }
+
+    }*/
 
 
     private void Push(InputDevice device) // A button
     {
         // A Button
         if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary)) {
+            if (nearObject.tag == "Tool")
+            {
+                Item item = nearObject.GetComponent<Item>();
+                int toolIndex = item.value;
+                hasPickys[toolIndex] = true;
+
+                Destroy(nearObject);
+            }
+            /*
             if (isPicked != primary)
             {
                 isPicked = primary;
@@ -127,24 +149,8 @@ public class XRCharacterController : MonoBehaviour
                 {
                     animator.ResetTrigger("Push");
                 }
-            }
+            }*/
         }
-        /*
-        if (device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed)) { 
-            if (isPicked != isPressed)
-            {
-                isPicked = isPressed;
-                if (isPicked)
-                {
-                    animator.SetTrigger("Push");
-                }
-                else
-                {
-                    animator.ResetTrigger("Push");
-                }
-            }
-        }
-        */
     }
 }
 
