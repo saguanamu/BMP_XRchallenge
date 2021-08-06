@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XRCharacterController : MonoBehaviour
 {
     // input values
-    public float speed = 1.0f;
+    public float speed = 5.0f;
 
     // reference
     public Transform head = null;
@@ -21,7 +21,7 @@ public class XRCharacterController : MonoBehaviour
 
     // 플레이어 주변 인식 가능한 물건
     GameObject nearObject;
-    //private bool isPicked = false;
+    private bool IsPicked = false;
     //public GameObject[] pickys; // 주울 수 있는 물건들
     //public bool[] hasPickys; // 플레이어가 주운 상태인지
 
@@ -92,6 +92,8 @@ public class XRCharacterController : MonoBehaviour
         animator.SetFloat("Move", blend);
     }
 
+    /*
+
     // 미션 물건 인식
     private void OnTriggerStay(Collider other)
     {
@@ -105,29 +107,25 @@ public class XRCharacterController : MonoBehaviour
         if (other.tag == "Mission")
             nearObject = null;
     }
+    */
 
     // 미션 물건 줍기 or 들기
+
     /*
     private void PickUp(InputDevice device) // A button
     {
-        if (device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed))
-        {
-            if(nearObject != null) { // 선택 가능한 물건
-                if(nearObject.tag == "Mission")
-                {
-                    if (isPicked != isPressed)
-                    {
-                        isPicked = isPressed;
+        if(device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed)) { 
+            if (IsPicked != isPressed)
+            {
+                IsPicked = isPressed;
 
-                        if (isPicked)
-                        {
-                            animator.SetTrigger("Pick");
-                        }
-                        else
-                        {
-                            animator.ResetTrigger("Pick");
-                        }
-                    }
+                if (IsPicked)
+                {
+                    animator.SetTrigger("Push");
+                }
+                else
+                {
+                    animator.ResetTrigger("Push");
                 }
             }
         }
