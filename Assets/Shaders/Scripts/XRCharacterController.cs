@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XRCharacterController : MonoBehaviour
 {
     // input values
-    public float speed = 5.0f;
+    public float speed = 1.0f;
 
     // reference
     public Transform head = null;
@@ -37,7 +37,7 @@ public class XRCharacterController : MonoBehaviour
         {
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
-            //PickUp(controller.inputDevice);
+            PickUp(controller.inputDevice);
         }
     }
 
@@ -92,7 +92,6 @@ public class XRCharacterController : MonoBehaviour
         animator.SetFloat("Move", blend);
     }
 
-    /*
 
     // 미션 물건 인식
     private void OnTriggerStay(Collider other)
@@ -107,18 +106,15 @@ public class XRCharacterController : MonoBehaviour
         if (other.tag == "Mission")
             nearObject = null;
     }
-    */
-
+    
     // 미션 물건 줍기 or 들기
 
-    /*
     private void PickUp(InputDevice device) // A button
     {
         if(device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed)) { 
             if (IsPicked != isPressed)
             {
                 IsPicked = isPressed;
-
                 if (IsPicked)
                 {
                     animator.SetTrigger("Push");
@@ -130,6 +126,5 @@ public class XRCharacterController : MonoBehaviour
             }
         }
     }
-    */
 }
 
