@@ -96,14 +96,14 @@ public class XRCharacterController : MonoBehaviour
     // 미션 물건 인식
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Mission")
+        if (other.tag == "Tool")
             nearObject = other.gameObject;
         Debug.Log(nearObject.name);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Mission")
+        if (other.tag == "Tool")
             nearObject = null;
     }
     
