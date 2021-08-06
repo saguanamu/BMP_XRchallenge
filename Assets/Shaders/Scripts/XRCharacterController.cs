@@ -104,7 +104,7 @@ public class XRCharacterController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Tool")
-            nearObject = null;
+            Item nearObject = null;
     }
     
     // 미션 물건 줍기 or 들기
