@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5792877318657395524}
   - component: {fileID: 5792877318653971300}
   - component: {fileID: 5792877318654970276}
-  - component: {fileID: 7155563971520979024}
-  - component: {fileID: 6761425664330324780}
+  - component: {fileID: 1291730023533079550}
+  - component: {fileID: 3817661637876778018}
   m_Layer: 0
   m_Name: Bag_05
   m_TagString: Untagged
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7155563971520979024
+--- !u!135 &1291730023533079550
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,12 +91,12 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5792877318657169252}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: -0.000000046170005, y: 0.26244283, z: -0.00000366593}
---- !u!54 &6761425664330324780
+--- !u!54 &3817661637876778018
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
