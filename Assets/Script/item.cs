@@ -7,5 +7,4 @@ public class Item : MonoBehaviour
     public enum Type { Tool };
     public Type type;
     public int value;
-
 }

@@ -40,7 +40,7 @@ public class XRCharacterController : MonoBehaviour
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
             Push(controller.inputDevice);
-            Interaction();
+            //Interaction();
         }
     }
 
@@ -110,6 +110,7 @@ public class XRCharacterController : MonoBehaviour
             nearObject = null;
     }
     
+    /*
     void Interaction()
     {
         if (nearObject.tag == "Tool")
@@ -117,31 +118,33 @@ public class XRCharacterController : MonoBehaviour
             Item item = nearObject.GetComponent<Item>();
             int toolIndex = item.value;
             hasPickys[toolIndex] = true;
-
+            animator.SetTrigger("Push");
             Destroy(nearObject);
         }
     }
-    
-    // 미션 물건 줍기 or 들기
+    */
+    // Tools are picked
     private void Push(InputDevice device) // A button
     {
         // A Button
         if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary)) {
-            Interaction();
-            
-            /*
             if (isPicked != primary)
             {
-                isPicked = primary;
+                isPicked = primary; // button on trigger
                 if (isPicked)
                 {
+                    Item item = nearObject.GetComponent<Item>();
+                    int toolIndex = item.value;
+                    hasPickys[toolIndex] = true;
                     animator.SetTrigger("Push");
+                    
                 }
                 else
                 {
                     animator.ResetTrigger("Push");
+                    Destroy(nearObject);
                 }
-            }*/
+            }
         }
     }
 }
