@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XRCharacterController : MonoBehaviour
 {
     // input values
-    public float speed = 0.2f;
+    public float speed = 1.0f;
 
     // reference
     public Transform head = null;
@@ -22,10 +22,8 @@ public class XRCharacterController : MonoBehaviour
     // 플레이어 주변 인식 가능한 물건
     GameObject nearObject;
     private bool isPicked = false;
-    public GameObject[] pickys; // 주울 수 있는 물건들
-    public bool[] hasPickys; // 플레이어가 주운 상태인지
-
-
+    //public GameObject[] pickys; // 주울 수 있는 물건들
+    //public bool[] hasPickys; // 플레이어가 주운 상태인지
 
     private void Awake()
     {
@@ -39,8 +37,7 @@ public class XRCharacterController : MonoBehaviour
         {
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
-            Push(controller.inputDevice);
-            //Interaction();
+            PickUp(controller.inputDevice);
         }
     }
 
@@ -95,57 +92,45 @@ public class XRCharacterController : MonoBehaviour
         animator.SetFloat("Move", blend);
     }
 
-    
     // 미션 물건 인식
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Tool")
+        if (other.tag == "Mission")
             nearObject = other.gameObject;
         Debug.Log(nearObject.name);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Tool")
+        if (other.tag == "Mission")
             nearObject = null;
     }
-    
-    /*
-    void Interaction()
+
+    // 미션 물건 줍기 or 들기
+    private void PickUp(InputDevice device) // A button
     {
-        if (nearObject.tag == "Tool")
+        if (device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed))
         {
-            Item item = nearObject.GetComponent<Item>();
-            int toolIndex = item.value;
-            hasPickys[toolIndex] = true;
-            animator.SetTrigger("Push");
-            Destroy(nearObject);
-        }
-    }
-    */
-    // Tools are picked
-    private void Push(InputDevice device) // A button
-    {
-        // A Button
-        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary)) {
-            if (isPicked != primary)
-            {
-                isPicked = primary; // button on trigger
-                if (isPicked)
+            if(nearObject != null) { // 선택 가능한 물건
+                if(nearObject.tag == "Mission")
                 {
-                    Item item = nearObject.GetComponent<Item>();
-                    int toolIndex = item.value;
-                    hasPickys[toolIndex] = true;
-                    animator.SetTrigger("Push");
-                    
-                }
-                else
-                {
-                    animator.ResetTrigger("Push");
-                    Destroy(nearObject);
+                    if (isPicked != isPressed)
+                    {
+                        isPicked = isPressed;
+
+                        if (isPicked)
+                        {
+                            animator.SetTrigger("Pick");
+                        }
+                        else
+                        {
+                            animator.ResetTrigger("Pick");
+                        }
+                    }
                 }
             }
         }
     }
+
 }
 
