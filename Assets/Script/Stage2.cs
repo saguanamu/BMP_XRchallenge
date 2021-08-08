@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class XRCharacterController : MonoBehaviour
+public class Stage2 : MonoBehaviour
 {
     // input values
-    public float speed = 0.2f;
+    public float speed = 0.15f;
 
     // reference
     public Transform head = null;
