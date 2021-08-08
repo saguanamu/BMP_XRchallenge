@@ -7,7 +7,7 @@ TagManager:
   - Land
   - Water
   - Bee
-  - Mission
+  - Tool
   layers:
   - Default
   - TransparentFX
