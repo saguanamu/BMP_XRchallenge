@@ -564,11 +564,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3807963033456805944}
   - component: {fileID: 923127124653784674}
-  - component: {fileID: 3227904670562933609}
   - component: {fileID: 1458023809459247713}
   - component: {fileID: 8314605382334907509}
   m_Layer: 0
-  m_Name: jebal
+  m_Name: Kim Nongbu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,29 +603,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1
+  m_Radius: 0.3
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.001
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &3227904670562933609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807963033456907290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa259bbf44bf43840affd66fdcd97105, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  head: {fileID: 0}
-  mesh: {fileID: 0}
-  controller: {fileID: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!95 &1458023809459247713
 Animator:
   serializedVersion: 3
@@ -642,7 +625,13 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'RigRCollarbone'\n\tTransform 'RigRUpperarm'\n\tTransform
+    'RigLUpperarm'\n\tTransform 'RigRForearm'\n\tTransform 'RigLPalm'\n\tTransform
+    'RigRFinger11'\n\tTransform 'RigRCollarbone'\n\tTransform 'RigRUpperarm'\n\tTransform
+    'RigLUpperarm'\n\tTransform 'RigRForearm'\n\tand more ...\n\tFrom animation clip
+    'open window'\n\tFrom animation clip 'pour watering can'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
