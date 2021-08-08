@@ -25,7 +25,10 @@ public class Stage1 : MonoBehaviour
     public GameObject[] pickys; // 주울 수 있는 물건들
     public bool[] hasPickys; // 플레이어가 주운 상태인지
 
+    public virtual void OnInteract()
+    {
 
+    }
 
     private void Awake()
     {
