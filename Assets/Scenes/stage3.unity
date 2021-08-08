@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -632,7 +632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 177
+  m_RootOrder: 178
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &66892465
 PrefabInstance:
@@ -5066,7 +5066,7 @@ PrefabInstance:
     - target: {fileID: 587951309083087412, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: mesh
       value: 
-      objectReference: {fileID: 834488007}
+      objectReference: {fileID: 0}
     - target: {fileID: 587951309083087412, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
       propertyPath: controller
       value: 
@@ -5133,11 +5133,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
---- !u!4 &834488007 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8658421219440962353, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
-  m_PrefabInstance: {fileID: 834488006}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &839712453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10170,6 +10165,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 989141865220743756, guid: 97f62714e2492ff41b041773c71f0681, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8425105810494491892, guid: 97f62714e2492ff41b041773c71f0681, type: 3}
       propertyPath: m_RootOrder
       value: 62
