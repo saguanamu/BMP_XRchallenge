@@ -4815,7 +4815,7 @@ GameObject:
   - component: {fileID: 2654789507457406665}
   - component: {fileID: 1402993778798745964}
   - component: {fileID: 3791072255542373798}
-  - component: {fileID: 1006267093140507090}
+  - component: {fileID: 6695920513382419987}
   m_Layer: 0
   m_Name: watering can_jajajajjajajjajaj
   m_TagString: Untagged
@@ -4887,7 +4887,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!111 &1006267093140507090
+--- !u!111 &6695920513382419987
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

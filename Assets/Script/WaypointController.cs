@@ -10,8 +10,8 @@ public class WaypointController : MonoBehaviour
     private float minDistance = 0.1f;
     private int lastWaypointIndex;
 
-    private float movementSpeed = 2.0f;
-    private float rotationSpeed = 3.0f;
+    private float movementSpeed = 1.0f;
+    private float rotationSpeed = 3.5f;
     void Start()
     {
         lastWaypointIndex = waypoints.Count - 1;
