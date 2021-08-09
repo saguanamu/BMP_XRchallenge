@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/stage5.unity
     guid: 79bd91e340120254385dd5e69bb9e1f1
+  - enabled: 0
+    path: Assets/EffectTexturesAndPrefabs/Scenes/blueguy.unity
+    guid: ff48c7f1465fece408c0a8de2717a2f9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 386a4313d93686b4285832962cd6f530, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 981396a00c1c85146b1e807230c8ed5d, type: 2}
