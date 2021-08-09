@@ -6,6 +6,7 @@ public class Stage2 : MonoBehaviour
 {
     // input values
     public float speed = 0.15f;
+    public float deadzone = 0.1f;
 
     // reference
     public Transform head = null;
@@ -19,19 +20,32 @@ public class Stage2 : MonoBehaviour
     // Values
     private Vector3 currentDirection = Vector3.zero;
 
-    // 플레이어 주변 인식 가능한 물건
-    GameObject nearObject;
-    GameObject equipObject; // 장착된 물건
-    private bool isPicked = false;
-    public GameObject[] pickys; // 주울 수 있는 물건들
-    public bool[] hasPickys; // 플레이어가 주운 상태인지
+    [SerializeField] ParticleSystem glow = null;
 
+    // door animation
+    private bool isOpened = false;
+    public Animation dooranim = null;
+    // thermometer animation
+    private bool isMeasured = false;
+    public Animation thermometeranim = null;
+    // lever animation
+    public Animation lever = null;
+    // curtain animation
+    public Animation curtain = null;
 
+    // lever
+    public GameObject[] group_lever;
+    // curtain
+    public GameObject[] group_curtain;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         character = GetComponent<CharacterController>();
+        dooranim = GetComponent<Animation>();
+        thermometeranim = GetComponent<Animation>();
+        lever = GetComponent<Animation>();
+        curtain = GetComponent<Animation>();
     }
 
     private void Update()
@@ -39,9 +53,8 @@ public class Stage2 : MonoBehaviour
         if (controller.enableInputActions)
         {
             CheckForMovement(controller.inputDevice);
-            //CheckForWave(controller.inputDevice);
+            Open(controller.inputDevice);
             Push(controller.inputDevice);
-            //Interaction();
         }
     }
 
@@ -51,7 +64,9 @@ public class Stage2 : MonoBehaviour
         if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 joystickDirection))
         {
             // Sets character direction, also factoring head
-            CalculateDirection(joystickDirection);
+            Vector3 newDirection = CalculateDirection(joystickDirection);
+
+            currentDirection = newDirection.magnitude > deadzone ? newDirection : Vector3.zero;
 
             // Apply character direction, and speed v
             MoveCharacter();
@@ -65,7 +80,7 @@ public class Stage2 : MonoBehaviour
     }
 
 
-    private void CalculateDirection(Vector2 joystickDirection)
+    private Vector3 CalculateDirection(Vector2 joystickDirection)
     {
         // Joystick direction
         Vector3 newDirection = new Vector3(joystickDirection.x, 0, joystickDirection.y);
@@ -74,7 +89,7 @@ public class Stage2 : MonoBehaviour
         Vector3 headRotation = new Vector3(0, head.transform.eulerAngles.y, 0);
 
         // Rotate our joystick direction using the rotation of the head
-        currentDirection = Quaternion.Euler(headRotation) * newDirection;
+        return Quaternion.Euler(headRotation) * newDirection;
     }
 
     private void MoveCharacter() // head rotation
@@ -97,54 +112,48 @@ public class Stage2 : MonoBehaviour
     }
 
 
-    // 미션 물건 인식
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Tool")
-            nearObject = other.gameObject;
-        Debug.Log(nearObject.name);
-    }
 
-    private void OnTriggerExit(Collider other)
+    // Push Lever
+    private void Push(InputDevice device) // B button
     {
-        if (other.tag == "Tool")
-            nearObject = null;
-    }
-
-    /*
-    void Interaction()
-    {
-        if (nearObject.tag == "Tool")
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool primary))
         {
-            Item item = nearObject.GetComponent<Item>();
-            int toolIndex = item.value;
-            hasPickys[toolIndex] = true;
-            animator.SetTrigger("Push");
-            Destroy(nearObject);
+            if (isMeasured != primary)
+            {
+                isMeasured = primary; // button on trigger
+                if (isMeasured)
+                {
+                    animator.SetTrigger("Push");
+                    lever.Play();
+                }
+                else
+                {
+                    animator.SetTrigger("Push");
+                    lever.Stop();
+                    Destroy(glow);
+                }
+            }
         }
     }
-    */
-    // Tools are picked
-    private void Push(InputDevice device) // A button
+
+    // Door Open
+    private void Open(InputDevice device) // A button
     {
         // A Button
         if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
         {
-            if (isPicked != primary)
+            if (isOpened != primary)
             {
-                isPicked = primary; // button on trigger
-                if (isPicked)
+                isOpened = primary; // button on trigger
+                if (isOpened)
                 {
-                    Item item = nearObject.GetComponent<Item>();
-                    int toolIndex = item.value;
-                    hasPickys[toolIndex] = true;
-                    animator.SetTrigger("Push");
-
+                    animator.SetTrigger("Open");
+                    dooranim.Play();
                 }
                 else
                 {
-                    animator.ResetTrigger("Push");
-                    Destroy(nearObject);
+                    animator.ResetTrigger("Open");
+                    dooranim.Stop();
                 }
             }
         }

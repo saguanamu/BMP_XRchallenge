@@ -8,6 +8,7 @@ TagManager:
   - Water
   - Bee
   - Tool
+  - Button
   layers:
   - Default
   - TransparentFX
