@@ -7459,7 +7459,7 @@ MonoBehaviour:
   pickys:
   - {fileID: 648971118}
   hasPickys: 00
-  ps: {fileID: 0}
+  ps: {fileID: 648971120}
 --- !u!4 &1392344803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3807963033456805944, guid: 9230d874fe4dc3448a9e7f4c3bf1aa41, type: 3}
