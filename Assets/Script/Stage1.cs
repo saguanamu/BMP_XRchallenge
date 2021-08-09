@@ -28,17 +28,13 @@ public class Stage1 : MonoBehaviour
 
     // water animation
     private bool isWatered = false; // 물 뿌린 상태 초기값 false
-    [SerializeField] ParticleSystem ps;
-
-    public virtual void OnInteract()
-    {
-
-    }
+    [SerializeField] ParticleSystem ps = null;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         character = GetComponent<CharacterController>();
+        //ps = GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -157,7 +153,6 @@ public class Stage1 : MonoBehaviour
                     equipObject = pickys[0];
                     equipObject.SetActive(true);
                     animator.SetTrigger("PourWater");
-                    
                     ps.Play();
                 }
                 else
