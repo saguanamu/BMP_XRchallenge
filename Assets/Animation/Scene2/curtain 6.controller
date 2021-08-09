@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5899647444307033319}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 420, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: curtain 3
+  m_Name: curtain 6
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
