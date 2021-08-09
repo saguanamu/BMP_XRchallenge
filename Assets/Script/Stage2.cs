@@ -21,6 +21,7 @@ public class Stage2 : MonoBehaviour
 
     // 플레이어 주변 인식 가능한 물건
     GameObject nearObject;
+    GameObject equipObject; // 장착된 물건
     private bool isPicked = false;
     public GameObject[] pickys; // 주울 수 있는 물건들
     public bool[] hasPickys; // 플레이어가 주운 상태인지

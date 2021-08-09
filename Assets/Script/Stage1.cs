@@ -21,11 +21,14 @@ public class Stage1 : MonoBehaviour
 
     // 플레이어 주변 인식 가능한 물건
     GameObject nearObject;
+    GameObject equipObject;
     private bool isPicked = false;
     public GameObject[] pickys; // 주울 수 있는 물건들
     public bool[] hasPickys; // 플레이어가 주운 상태인지
-    private bool isWatered = false;
-    public Animation anim;
+
+    // water animation
+    private bool isWatered = false; // 물 뿌린 상태 초기값 false
+    public ParticleSystem ps;
 
     public virtual void OnInteract()
     {
@@ -121,6 +124,7 @@ public class Stage1 : MonoBehaviour
         {
             if (isPicked != primary)
             {
+                
                 isPicked = primary; // button on trigger
                 if (isPicked)
                 {
@@ -128,12 +132,13 @@ public class Stage1 : MonoBehaviour
                     int toolIndex = item.value;
                     hasPickys[toolIndex] = true;
                     animator.SetTrigger("Pick");
-                    //anim.Play();
                 }
                 else
                 {
+                    
                     animator.ResetTrigger("Pick");
-                    //anim.Stop();
+                    Destroy(nearObject);
+                    
                 }
             }
         }
@@ -150,13 +155,16 @@ public class Stage1 : MonoBehaviour
                 isWatered = primary; // button on trigger
                 if (isWatered)
                 {
+                    
+                    equipObject = pickys[0];
+                    equipObject.SetActive(true);
                     animator.SetTrigger("PourWater");
-                    anim.Play();
+                    ps.Play();
                 }
                 else
                 {
                     animator.ResetTrigger("PourWater");
-                    anim.Stop();
+                    ps.Stop();
                 }
             }
         }
