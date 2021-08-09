@@ -21,9 +21,14 @@ public class Stage1 : MonoBehaviour
 
     // 플레이어 주변 인식 가능한 물건
     GameObject nearObject;
+    GameObject equipObject;
     private bool isPicked = false;
     public GameObject[] pickys; // 주울 수 있는 물건들
     public bool[] hasPickys; // 플레이어가 주운 상태인지
+
+    // water animation
+    private bool isWatered = false; // 물 뿌린 상태 초기값 false
+    public ParticleSystem ps;
 
     public virtual void OnInteract()
     {
@@ -42,6 +47,7 @@ public class Stage1 : MonoBehaviour
         {
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
+            Pick(controller.inputDevice);
             Push(controller.inputDevice);
             //Interaction();
         }
@@ -112,6 +118,31 @@ public class Stage1 : MonoBehaviour
         if (other.tag == "Tool")
             nearObject = null;
     }
+    private void Pick(InputDevice device) // B button
+    {
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool primary))
+        {
+            if (isPicked != primary)
+            {
+                
+                isPicked = primary; // button on trigger
+                if (isPicked)
+                {
+                    Item item = nearObject.GetComponent<Item>();
+                    int toolIndex = item.value;
+                    hasPickys[toolIndex] = true;
+                    animator.SetTrigger("Pick");
+                }
+                else
+                {
+                    
+                    animator.ResetTrigger("Pick");
+                    Destroy(nearObject);
+                    
+                }
+            }
+        }
+    }
 
     // Tools are picked
     private void Push(InputDevice device) // A button
@@ -119,19 +150,21 @@ public class Stage1 : MonoBehaviour
         // A Button
         if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
         {
-            if (isPicked != primary)
+            if (isWatered != primary)
             {
-                isPicked = primary; // button on trigger
-                if (isPicked)
+                isWatered = primary; // button on trigger
+                if (isWatered)
                 {
-                    Item item = nearObject.GetComponent<Item>();
-                    int toolIndex = item.value;
-                    hasPickys[toolIndex] = true;
+                    
+                    equipObject = pickys[0];
+                    equipObject.SetActive(true);
                     animator.SetTrigger("PourWater");
+                    ps.Play();
                 }
                 else
                 {
                     animator.ResetTrigger("PourWater");
+                    ps.Stop();
                 }
             }
         }
