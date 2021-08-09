@@ -6,6 +6,7 @@ public class Stage1 : MonoBehaviour
 {
     // input values
     public float speed = 0.15f;
+    public float deadzone = 0.1f;
 
     // reference
     public Transform head = null;
@@ -29,12 +30,12 @@ public class Stage1 : MonoBehaviour
     // water animation
     private bool isWatered = false; // 물 뿌린 상태 초기값 false
     [SerializeField] ParticleSystem ps = null;
+    [SerializeField] ParticleSystem glow = null;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         character = GetComponent<CharacterController>();
-        //ps = GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -55,7 +56,9 @@ public class Stage1 : MonoBehaviour
         if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 joystickDirection))
         {
             // Sets character direction, also factoring head
-            CalculateDirection(joystickDirection);
+            Vector3 newDirection = CalculateDirection(joystickDirection);
+
+            currentDirection = newDirection.magnitude > deadzone ? newDirection : Vector3.zero;
 
             // Apply character direction, and speed v
             MoveCharacter();
@@ -69,7 +72,7 @@ public class Stage1 : MonoBehaviour
     }
 
 
-    private void CalculateDirection(Vector2 joystickDirection)
+    private Vector3 CalculateDirection(Vector2 joystickDirection)
     {
         // Joystick direction
         Vector3 newDirection = new Vector3(joystickDirection.x, 0, joystickDirection.y);
@@ -78,7 +81,7 @@ public class Stage1 : MonoBehaviour
         Vector3 headRotation = new Vector3(0, head.transform.eulerAngles.y, 0);
 
         // Rotate our joystick direction using the rotation of the head
-        currentDirection = Quaternion.Euler(headRotation) * newDirection;
+        return Quaternion.Euler(headRotation) * newDirection;
     }
 
     private void MoveCharacter() // head rotation
@@ -120,7 +123,6 @@ public class Stage1 : MonoBehaviour
         {
             if (isPicked != primary)
             {
-                
                 isPicked = primary; // button on trigger
                 if (isPicked)
                 {
@@ -133,7 +135,7 @@ public class Stage1 : MonoBehaviour
                 {
                     animator.ResetTrigger("Pick");
                     Destroy(nearObject);
-                    
+                    Destroy(glow);
                 }
             }
         }
