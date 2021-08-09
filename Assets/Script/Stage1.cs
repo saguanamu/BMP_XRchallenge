@@ -24,6 +24,8 @@ public class Stage1 : MonoBehaviour
     private bool isPicked = false;
     public GameObject[] pickys; // 주울 수 있는 물건들
     public bool[] hasPickys; // 플레이어가 주운 상태인지
+    private bool isWatered = false;
+    public Animation anim;
 
     public virtual void OnInteract()
     {
@@ -42,6 +44,7 @@ public class Stage1 : MonoBehaviour
         {
             CheckForMovement(controller.inputDevice);
             //CheckForWave(controller.inputDevice);
+            Pick(controller.inputDevice);
             Push(controller.inputDevice);
             //Interaction();
         }
@@ -112,12 +115,9 @@ public class Stage1 : MonoBehaviour
         if (other.tag == "Tool")
             nearObject = null;
     }
-
-    // Tools are picked
-    private void Push(InputDevice device) // A button
+    private void Pick(InputDevice device) // B button
     {
-        // A Button
-        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool primary))
         {
             if (isPicked != primary)
             {
@@ -127,11 +127,36 @@ public class Stage1 : MonoBehaviour
                     Item item = nearObject.GetComponent<Item>();
                     int toolIndex = item.value;
                     hasPickys[toolIndex] = true;
+                    animator.SetTrigger("Pick");
+                    //anim.Play();
+                }
+                else
+                {
+                    animator.ResetTrigger("Pick");
+                    //anim.Stop();
+                }
+            }
+        }
+    }
+
+    // Tools are picked
+    private void Push(InputDevice device) // A button
+    {
+        // A Button
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+        {
+            if (isWatered != primary)
+            {
+                isWatered = primary; // button on trigger
+                if (isWatered)
+                {
                     animator.SetTrigger("PourWater");
+                    anim.Play();
                 }
                 else
                 {
                     animator.ResetTrigger("PourWater");
+                    anim.Stop();
                 }
             }
         }

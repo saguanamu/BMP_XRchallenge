@@ -11,7 +11,7 @@ public class WaypointController : MonoBehaviour
     private int lastWaypointIndex;
 
     private float movementSpeed = 1.0f;
-    private float rotationSpeed = 3.5f;
+    private float rotationSpeed = 5.0f;
     void Start()
     {
         lastWaypointIndex = waypoints.Count - 1;
