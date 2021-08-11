@@ -488,6 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.15
+  deadzone: 0.1
   head: {fileID: 0}
   mesh: {fileID: 719812809}
   controller: {fileID: 0}
@@ -495,7 +496,7 @@ MonoBehaviour:
   - {fileID: 1746753359}
   hasPickys: 00
   ps: {fileID: 0}
-  anim: {fileID: 0}
+  glow: {fileID: 0}
 --- !u!1 &973756698
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430727316611697779, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3430727316611697779, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
       propertyPath: m_TagString
