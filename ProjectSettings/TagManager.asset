@@ -9,6 +9,14 @@ TagManager:
   - Bee
   - Tool
   - Button
+  - Door
+  - Button2
+  - Button3
+  - P
+  - C1
+  - C2
+  - C3
+  - T1
   layers:
   - Default
   - TransparentFX

@@ -501,7 +501,7 @@ MonoBehaviour:
   - {fileID: 2126719801}
   hasPickys: 00
   ps: {fileID: 2126719798}
-  glow: {fileID: 0}
+  glow: {fileID: 2126719805}
 --- !u!1001 &59186122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11195,6 +11195,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5766520517133927226, guid: c930bbf15c8140b4e91a043b88d67370, type: 3}
+--- !u!198 &2126719805 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6202090504456309363, guid: 7de7661b5801e5840bd8225acfcef386, type: 3}
+  m_PrefabInstance: {fileID: 2126719797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2131213270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1193818278259526299, guid: cd7e49e261c54cc4abbf58a434ba40f6, type: 3}
