@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 3807963033456805944}
   - component: {fileID: 923127124653784674}
   - component: {fileID: 1458023809459247713}
-  - component: {fileID: 4640473236366821787}
+  - component: {fileID: 7992313500700159696}
   m_Layer: 0
   m_Name: Kim Nongbu
   m_TagString: Untagged
@@ -635,7 +635,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &4640473236366821787
+--- !u!136 &7992313500700159696
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,10 +645,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.25
+  m_Height: 1.2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3807963033456907292
 GameObject:
   m_ObjectHideFlags: 0
