@@ -15,13 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/stage1.unity
     guid: 885591d1c2e21f145a5220ff9ff08436
   - enabled: 0
-    path: Assets/Scenes/stage7.unity
+    path: Assets/Scenes/stage5.unity
     guid: 5abeb20dc0cb65d4fbcf82a43bb15705
   - enabled: 0
     path: Assets/Scenes/stage2.unity
     guid: 87df6f6fcbf3a544a9bbbeee4f505f9d
   - enabled: 0
-    path: Assets/Scenes/stage5.unity
+    path: Assets/Scenes/delete scene/stage5.unity
     guid: 79bd91e340120254385dd5e69bb9e1f1
   - enabled: 0
     path: Assets/EffectTexturesAndPrefabs/Scenes/blueguy.unity
