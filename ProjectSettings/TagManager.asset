@@ -3,29 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Land
-  - Water
-  - Bee
-  - Tool
-  - Button
-  - Door
-  - Button2
-  - Button3
-  - P
-  - C1
-  - C2
-  - C3
-  - T1
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Grab Ignore Ray
+  - 
   - Water
   - UI
-  - IsWet
-  - Rayevent
+  - 
+  - 
   - 
   - 
   - 
