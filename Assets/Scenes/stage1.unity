@@ -21340,6 +21340,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+        type: 3}
+      propertyPath: m_OnFirstHoverEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+        type: 3}
+      propertyPath: m_OnFirstHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+        type: 3}
+      propertyPath: m_OnFirstHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4219264701109038582, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
         type: 3}
       propertyPath: m_Name
