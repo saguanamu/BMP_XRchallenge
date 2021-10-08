@@ -35,4 +35,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Marketing/DTC_DropingStones_01.unity
     guid: be96bbdb29830cb4385edc70334680a1
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b992e14cc2337844fa0b49ad1f62e077,
+      type: 2}
