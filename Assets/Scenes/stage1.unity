@@ -2118,6 +2118,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13f94be0531e4134bac57a37fe573e9d, type: 3}
+--- !u!198 &175047371 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2939961282982901710, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6475375177580618436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &186828120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11938,6 +11944,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffc0fadd0e7e6f4d98d337111bd29fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: c73fa4776c882fb4883ae9e22b5c3df7, type: 3}
+  audioSource: {fileID: 0}
+  particleSystemLiquid: {fileID: 175047371}
+  PouringClip: {fileID: 8300000, guid: c73fa4776c882fb4883ae9e22b5c3df7, type: 3}
 --- !u!1001 &1079388187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12065,7 +12075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082136891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0.967, z: 0}
+  m_LocalPosition: {x: 0.16, y: -0.013, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 99270421}
@@ -21360,7 +21370,7 @@ PrefabInstance:
     - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
         type: 3}
       propertyPath: m_OnActivate.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
         type: 3}
@@ -21374,8 +21384,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
         type: 3}
+      propertyPath: m_OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1077185910}
+    - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+        type: 3}
       propertyPath: m_OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+        type: 3}
+      propertyPath: m_OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Water
       objectReference: {fileID: 0}
     - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
         type: 3}
@@ -21386,6 +21406,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnFirstHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+        type: 3}
+      propertyPath: m_OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Stage1GrabObjectInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020074288756562680, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
+        type: 3}
+      propertyPath: m_OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4219264701109038582, guid: fd1ac42e61c178649afd66bb5cdcaf4e,
         type: 3}
