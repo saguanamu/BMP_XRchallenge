@@ -103,9 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 8300000, guid: c73fa4776c882fb4883ae9e22b5c3df7, type: 3}
-  ps: {fileID: 0}
+  clip: {fileID: 0}
+  ps: {fileID: 4100549070850671044}
   glow: {fileID: 8080179294489980804}
 --- !u!1001 &6475375177508367851
 PrefabInstance:
@@ -231,6 +230,12 @@ Transform:
 --- !u!1 &8080179294489980804 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3026338872130667119, guid: 482ac63b431522c48805e6334e02d18d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6475375177508367851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4100549070850671044 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7004562854726102063, guid: 482ac63b431522c48805e6334e02d18d,
     type: 3}
   m_PrefabInstance: {fileID: 6475375177508367851}
   m_PrefabAsset: {fileID: 0}
