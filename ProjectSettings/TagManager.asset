@@ -8,6 +8,12 @@ TagManager:
   - C3
   - L1
   - L2
+  - B3
+  - B5
+  - Plant1
+  - Plant2
+  - Plant3
+  - Plant4
   layers:
   - Default
   - TransparentFX
