@@ -5567,10 +5567,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6977094371746905342, guid: cca771a3272e18b499232aa27ce5a31b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant3
+      objectReference: {fileID: 0}
     - target: {fileID: 7435880971653560421, guid: cca771a3272e18b499232aa27ce5a31b,
         type: 3}
       propertyPath: m_Name
       value: Garden_08 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571063372980076809, guid: cca771a3272e18b499232aa27ce5a31b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca771a3272e18b499232aa27ce5a31b, type: 3}
@@ -5592,6 +5602,48 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 421277575}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &421277579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7571063372980076809, guid: cca771a3272e18b499232aa27ce5a31b,
+    type: 3}
+  m_PrefabInstance: {fileID: 421277575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &421277580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6977094371746905342, guid: cca771a3272e18b499232aa27ce5a31b,
+    type: 3}
+  m_PrefabInstance: {fileID: 421277575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &421277581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421277579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e639f03623831e9438e56d4d3ea4c6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  glow: {fileID: 0}
+  other: {fileID: 0}
+--- !u!114 &421277582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421277580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e639f03623831e9438e56d4d3ea4c6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  glow: {fileID: 0}
+  other: {fileID: 0}
 --- !u!1001 &429216155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17928,6 +17980,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garden_07 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6425846212510746434, guid: 7635e35a8c8cc6a4b994ee21624a172f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8842004350935696398, guid: 7635e35a8c8cc6a4b994ee21624a172f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7635e35a8c8cc6a4b994ee21624a172f, type: 3}
 --- !u!4 &1410902745 stripped
@@ -17966,96 +18028,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e639f03623831e9438e56d4d3ea4c6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1410902750
+  controller: {fileID: 0}
+  glow: {fileID: 0}
+  other: {fileID: 0}
+--- !u!1 &1410902750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6425846212510746434, guid: 7635e35a8c8cc6a4b994ee21624a172f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1410902744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1410902751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410902748}
+  m_GameObject: {fileID: 1410902750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: e639f03623831e9438e56d4d3ea4c6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 203758876}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OnFirstHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CustomReticle: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 0.25
-  m_GravityOnDetach: 0
-  m_RetainTransformParent: 1
---- !u!54 &1410902751
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410902748}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
+  controller: {fileID: 0}
+  glow: {fileID: 0}
+  other: {fileID: 0}
 --- !u!1001 &1418320752
 PrefabInstance:
   m_ObjectHideFlags: 0
