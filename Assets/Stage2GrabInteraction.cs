@@ -10,6 +10,12 @@ public class Stage2GrabInteraction : MonoBehaviour
     public Animator animator = null;
     private bool isDowned = false; // 버튼 초기 상태
 
+    // curtain
+    private bool isClosed = false; // 왼쪽
+    public Animator curtain_animator = null;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
