@@ -6,14 +6,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Stage1GrabObjectInteraction : MonoBehaviour
 {
-    //private XRGrabInteractable grab = null;
     public XRController controller = null;
     public AudioClip clip;
 
     // water animation
     private bool isWatered = false; // 물 뿌린 상태 초기값 false
-    [SerializeField] public ParticleSystem ps;
+    [SerializeField] private ParticleSystem ps;
     public GameObject glow;
+
+    private void Start()
+    {
+        ps = GameObject.Find("WaterEffect").GetComponent<ParticleSystem>();
+    }
 
     private void Update()
     {
