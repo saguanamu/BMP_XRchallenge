@@ -14,6 +14,14 @@ TagManager:
   - Plant2
   - Plant3
   - Plant4
+  - P
+  - S1
+  - S2
+  - S3
+  - S4
+  - S5
+  - S6
+  - S7
   layers:
   - Default
   - TransparentFX
