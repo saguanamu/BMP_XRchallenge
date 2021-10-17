@@ -12,7 +12,7 @@ public class Stage1GrabObjectInteraction : MonoBehaviour
 
     // water animation
     private bool isWatered = false; // 물 뿌린 상태 초기값 false
-    [SerializeField] ParticleSystem ps;
+    [SerializeField] public ParticleSystem ps;
     public GameObject glow;
 
     private void Update()
