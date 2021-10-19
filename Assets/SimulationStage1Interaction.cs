@@ -24,7 +24,7 @@ public class SimulationStage1Interaction : MonoBehaviour
     {
         bt_start = GameObject.Find("button start").GetComponent<Animator>();
         bt_stop = GameObject.Find("button stop").GetComponent<Animator>();
-        plant = GameObject.Find("PlantGrow").GetComponent<Animator>();
+        plant = GameObject.Find("plant").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class SimulationStage1Interaction : MonoBehaviour
         {
             float dist = Vector3.Distance(other.position, transform.position);
             Debug.Log("Distance to other : " + dist);
-            if (dist <= 0.05f && CompareTag("B3"))
+            if (dist <= 0.02f && CompareTag("B3"))
             {
                 Destroy(glow);
                 if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
@@ -59,7 +59,7 @@ public class SimulationStage1Interaction : MonoBehaviour
                 }
             }
 
-            if (dist <= 0.05f && CompareTag("B5"))
+            if (dist <= 0.02f && CompareTag("B5"))
             {
                 Destroy(glow);
                 if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
