@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/simulation/stage1 SIMULATION.unity
     guid: 885591d1c2e21f145a5220ff9ff08436
-  - enabled: 0
-    path: Assets/Scenes/stage2.unity
-    guid: 87df6f6fcbf3a544a9bbbeee4f505f9d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/stage1.unity
     guid: 9f52da27aba249a49b64d7c4467c35e6
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 95b5058094a98ab4eb9b1601851e35d6
+  - enabled: 1
+    path: Assets/Scenes/stage2.unity
+    guid: 87df6f6fcbf3a544a9bbbeee4f505f9d
   - enabled: 0
     path: Assets/Scenes/stage5.unity
     guid: 79bd91e340120254385dd5e69bb9e1f1

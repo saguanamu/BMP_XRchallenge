@@ -11,6 +11,7 @@ public class Stage1GrabObjectInteraction : MonoBehaviour
 
     // water animation
     private bool isWatered = false; // 물 뿌린 상태 초기값 false
+    private bool buttonB = false;
     [SerializeField] private ParticleSystem ps;
     public GameObject glow;
 
@@ -37,8 +38,15 @@ public class Stage1GrabObjectInteraction : MonoBehaviour
                     ps.Stop();
                 }
             }
-        } 
-    }
+        }
 
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool primary2)) // Loading scene
+        {
+            buttonB = primary2;
+            if(buttonB) {
+                LoadingSceneManager.LoadScene("stage2");
+            }
+        }
+    }
     
 }

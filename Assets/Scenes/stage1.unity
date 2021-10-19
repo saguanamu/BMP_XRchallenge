@@ -437,6 +437,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 382578677600980203, guid: 482ac63b431522c48805e6334e02d18d,
         type: 3}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 25653384}
+    - target: {fileID: 382578677600980203, guid: 482ac63b431522c48805e6334e02d18d,
+        type: 3}
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: c73fa4776c882fb4883ae9e22b5c3df7, type: 3}
@@ -552,6 +557,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 482ac63b431522c48805e6334e02d18d, type: 3}
+--- !u!198 &25653384 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2047338524677440407, guid: 482ac63b431522c48805e6334e02d18d,
+    type: 3}
+  m_PrefabInstance: {fileID: 25653383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &25904340
 PrefabInstance:
   m_ObjectHideFlags: 0
