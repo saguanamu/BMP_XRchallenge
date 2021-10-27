@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/stage4.unity
     guid: 0568648463b9730479d0453ec0d1ecb5
   - enabled: 0
-    path: Assets/Scenes/change.unity
+    path: Assets/Scenes/tutorial board mode.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 386a4313d93686b4285832962cd6f530,
