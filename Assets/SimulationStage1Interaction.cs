@@ -19,6 +19,9 @@ public class SimulationStage1Interaction : MonoBehaviour
     [SerializeField] public ParticleSystem water2;
     [SerializeField] public ParticleSystem water3;
 
+    public GameObject display1;
+    public GameObject display2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,8 @@ public class SimulationStage1Interaction : MonoBehaviour
                         if (isDowned)
                         {
                             bt_start.SetBool("Push", true);
+                            Destroy(display1);
+                            Destroy(display2);
                             water1.Play();
                             water2.Play();
                             water3.Play();

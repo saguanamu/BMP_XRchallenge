@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-
 public class LoadingSceneManager : MonoBehaviour
 {
     public static string nextScene;

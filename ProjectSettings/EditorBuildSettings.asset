@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/simulation/stage1 SIMULATION.unity
     guid: 885591d1c2e21f145a5220ff9ff08436
+  - enabled: 0
+    path: Assets/Scenes/tutorial board mode.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/stage1.unity
     guid: 9f52da27aba249a49b64d7c4467c35e6
@@ -32,9 +35,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/stage4.unity
     guid: 0568648463b9730479d0453ec0d1ecb5
-  - enabled: 0
-    path: Assets/Scenes/tutorial board mode.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 386a4313d93686b4285832962cd6f530,
       type: 2}

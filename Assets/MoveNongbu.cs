@@ -27,6 +27,8 @@ public class MoveNongbu : MonoBehaviour
     [SerializeField] public ParticleSystem ring6;
     [SerializeField] public ParticleSystem ring7;
 
+    private bool isDowned = false; // 버튼 초기 상태
+
     // Values
     private Vector3 currentDirection = Vector3.zero;
     private void Awake()
@@ -98,33 +100,96 @@ public class MoveNongbu : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("S1"))
+        if (other.CompareTag("S1"))
         {
             ring1.Play();
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+            {
+                if (isDowned != primary)
+                {
+                    isDowned = primary;
+                    if(isDowned)
+                        LoadingSceneManager.LoadScene("stage1");
+                }
+            }
         }
         else if (other.CompareTag("S2"))
         {
             ring2.Play();
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+            {
+                if (isDowned != primary)
+                {
+                    isDowned = primary;
+                    if (isDowned)
+                        LoadingSceneManager.LoadScene("stage2");
+                }
+            }
         }
         else if (other.CompareTag("S3"))
         {
             ring3.Play();
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+            {
+                if (isDowned != primary)
+                {
+                    isDowned = primary;
+                    if (isDowned)
+                        LoadingSceneManager.LoadScene("stage3");
+                }
+            }
         }
         else if (other.CompareTag("S4"))
         {
             ring4.Play();
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+            {
+                if (isDowned != primary)
+                {
+                    isDowned = primary;
+                    if (isDowned)
+                        LoadingSceneManager.LoadScene("stage4");
+                }
+            }
         }
         else if (other.CompareTag("S5"))
         {
             ring5.Play();
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+            {
+                if (isDowned != primary)
+                {
+                    isDowned = primary;
+                    if (isDowned)
+                        LoadingSceneManager.LoadScene("stage5");
+                }
+            }
         }
         else if (other.CompareTag("S6"))
         {
             ring6.Play();
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+            {
+                if (isDowned != primary)
+                {
+                    isDowned = primary;
+                    if (isDowned)
+                        LoadingSceneManager.LoadScene("stage6");
+                }
+            }
         }
         else if (other.CompareTag("S7"))
         {
             ring7.Play();
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+            {
+                if (isDowned != primary)
+                {
+                    isDowned = primary;
+                    if (isDowned)
+                        LoadingSceneManager.LoadScene("stage7");
+                }
+            }
         }
     }
 
