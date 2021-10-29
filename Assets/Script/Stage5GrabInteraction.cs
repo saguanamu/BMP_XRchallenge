@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class Stage5GrabInteraction : MonoBehaviour
 {
     public XRController controller = null;
-    public AudioClip clip;
 
     // water animation
-    private bool isFeed = false; // 물 뿌린 상태 초기값 false
+    private bool isFeed = false; // 사료 뿌린 상태 초기값 false
     private bool buttonB = false;
     [SerializeField] private ParticleSystem ps;
     public GameObject glow;
 
+    private Animator cow1 = null;
+    private Animator cow2 = null;
+
     private void Start()
     {
         ps = GameObject.Find("FeedEffect").GetComponent<ParticleSystem>();
+        cow1 = GameObject.Find("Cow (1)").GetComponent<Animator>();
+        cow2 = GameObject.Find("Cow (2)").GetComponent<Animator>();
     }
 
     private void Update()
@@ -30,8 +35,10 @@ public class Stage5GrabInteraction : MonoBehaviour
                 isFeed = primary; // button on trigger
                 if (isFeed)
                 {
+                    Destroy(glow);
                     ps.Play();
-                    //SoundManger.instance.SFXPlay("liquid", clip);
+                    cow1.SetBool("Eat", true);
+                    cow2.SetBool("Eat", true);
                 }
                 else
                 {
