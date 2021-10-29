@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class Stage3GrabInteraction : MonoBehaviour
 {
     public XRController controller = null;
     private bool isDowned = false; // 버튼 초기 상태
+    private bool buttonB = false;
     public GameObject glow;
     public Transform other;
 
@@ -79,6 +81,14 @@ public class Stage3GrabInteraction : MonoBehaviour
                             bt3.SetBool("isPush", false);
                         }
                     }
+                }
+            }
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool primary2)) // Loading scene
+            {
+                buttonB = primary2;
+                if (buttonB)
+                {
+                    SceneManager.LoadScene("stage6 SIMULATION");
                 }
             }
         }

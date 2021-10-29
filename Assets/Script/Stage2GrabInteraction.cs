@@ -10,6 +10,7 @@ public class Stage2GrabInteraction : MonoBehaviour
     public XRController controller = null;
     public Animator animator = null;
     private bool isDowned = false; // 버튼 초기 상태
+    private bool buttonB = false;
     public GameObject glow;
 
     // curtain
@@ -74,5 +75,14 @@ public class Stage2GrabInteraction : MonoBehaviour
                 }
             }
         }
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool primary2)) // Loading scene
+        {
+            buttonB = primary2;
+            if (buttonB)
+            {
+                SceneManager.LoadScene("stage3");
+            }
+        }
     }
+
 }
