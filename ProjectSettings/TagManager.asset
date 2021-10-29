@@ -22,6 +22,10 @@ TagManager:
   - S5
   - S6
   - S7
+  - green2 start
+  - green2 stop
+  - green3 start
+  - green3 stop
   layers:
   - Default
   - TransparentFX

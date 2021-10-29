@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class Stage1GrabObjectInteraction : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class Stage1GrabObjectInteraction : MonoBehaviour
         {
             buttonB = primary2;
             if(buttonB) {
-                LoadingSceneManager.LoadScene("stage2");
+                SceneManager.LoadScene("stage2");
             }
         }
     }
