@@ -5,6 +5,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.SceneManagement;
 
+
 public class Stage5GrabInteraction : MonoBehaviour
 {
     public XRController controller = null;
@@ -18,11 +19,14 @@ public class Stage5GrabInteraction : MonoBehaviour
     private Animator cow1 = null;
     private Animator cow2 = null;
 
+    
+
     private void Start()
     {
         ps = GameObject.Find("FeedEffect").GetComponent<ParticleSystem>();
         cow1 = GameObject.Find("Cow (1)").GetComponent<Animator>();
         cow2 = GameObject.Find("Cow (2)").GetComponent<Animator>();
+        
     }
 
     private void Update()
